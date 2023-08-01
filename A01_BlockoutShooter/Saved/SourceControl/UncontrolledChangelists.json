@@ -1,0 +1,33 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/Epic Games/A01_BlockoutShooter/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Assets/W01_-_Assets/Texture_01.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/U7/H8YL2PPHZPBTI74SUD0RNL.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/4D/BBOCKSZY1GVHTFRX0PR0O8.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/0G/JNKFA4X9LRMSF343ESPF6Q.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/AM/KEX8M88L1MRJWE7GVRW0RF.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/P3/86J8EW2MSYSSY8CAAD89QF.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/VE/A7B04IKPBTJ3MX7P5AW4HY.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/AT/0VOLBMOM6P07GIYP69XPKG.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/8P/DNHSF9VJ7ZBTR80ND75HKK.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/LH/D3QZO0ZBBKSPWB6TN2U7X7.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/WY/AGRSIJWP7OEPBHKDSR85RK.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/S4/W34KJKX5MGCWQWAYEBN2IK.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/QO/5U5JIKFR5WH14KP5WK01EK.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/VF/6GQTL2URLKWRFOA1C70LS7.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/0G/LCT8ZTIW5VQQA506GW1KEC.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Controls/IA_PrimaryFire.uasset",
+				"D:/Epic Games/A01_BlockoutShooter/Content/Controls/IMC_WeaponContext.uasset"
+			]
+		}
+	]
+}

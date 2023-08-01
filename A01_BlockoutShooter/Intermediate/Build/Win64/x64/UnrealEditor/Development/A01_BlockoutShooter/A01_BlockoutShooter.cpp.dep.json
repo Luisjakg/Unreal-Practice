@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\epic games\\a01_blockoutshooter (old)\\source\\a01_blockoutshooter\\a01_blockoutshooter.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\epic games\\a01_blockoutshooter (old)\\intermediate\\build\\win64\\x64\\a01_blockoutshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "d:\\epic games\\a01_blockoutshooter (old)\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\a01_blockoutshooter\\definitions.a01_blockoutshooter.h",
+            "d:\\epic games\\a01_blockoutshooter (old)\\source\\a01_blockoutshooter\\a01_blockoutshooter.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
