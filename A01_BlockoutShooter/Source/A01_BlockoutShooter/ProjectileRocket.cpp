@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "A01_BlockoutShooterCharacter.h"
 #include "ProjectileRocket.h"
 
 // Sets default values
@@ -49,6 +50,21 @@ void AProjectileRocket::OnRocketHit(UPrimitiveComponent* HitComponent, AActor* O
 		{
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
 		}
+		TArray<FHitResult> HitResults;
+        FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(500);
+        GetWorld()->SweepMultiByChannel(HitResults, HitResult.Location, HitResult.Location, FQuat::Identity, ECC_Pawn, CollisionSphere);
+
+		if(HitResults.Num() > 0)
+        {
+        	for(FHitResult Hit : HitResults)
+        	{
+        		AA01_BlockoutShooterCharacter* HitCharacter = Cast<AA01_BlockoutShooterCharacter>(Hit.GetActor());
+        		if(HitCharacter)
+        		{
+        			HitCharacter->DealDamage(Damage);
+        		}
+        	}
+        }
 		Destroy();
     }
 

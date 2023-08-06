@@ -8,25 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc0b5b7a-ff70-466f-9f7b-718e901b26be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditorPerProjectUserSettings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Platforms/HoloLens/Config/HoloLensEngine.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter.Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooterEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooterEditor.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ScoreWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ScoreWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ScoreWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ScoreWidget.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691321609627</updated>
       <workItem from="1691321610721" duration="370000" />
-      <workItem from="1691322193799" duration="312000" />
+      <workItem from="1691322193799" duration="4887000" />
     </task>
     <servers />
   </component>

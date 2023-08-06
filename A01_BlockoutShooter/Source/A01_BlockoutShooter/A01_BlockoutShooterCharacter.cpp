@@ -9,6 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "GameFramework/PlayerState.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -56,6 +57,8 @@ void AA01_BlockoutShooterCharacter::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
+	CurrentHealth = MaxHealth;
+	
 	//Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
@@ -63,6 +66,36 @@ void AA01_BlockoutShooterCharacter::BeginPlay()
 		{
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
+	}
+
+	if(ScoreWidgetClass)
+	{
+		UScoreWidget* ScoreWidget = Cast<UScoreWidget>(CreateWidget(GetGameInstance(), ScoreWidgetClass));
+		ScoreWidget->AddToViewport();
+	}
+
+	GameState = Cast<AShooterGameState>(GetWorld()->GetGameState());
+}
+
+void AA01_BlockoutShooterCharacter::DealDamage(int Damage)
+{
+	CurrentHealth-=Damage;
+	UE_LOG(LogTemp, Warning, TEXT("Hit %s New Health: %f"), *GetName(), CurrentHealth);
+	if(CurrentHealth<= 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s Died!"), *GetName());
+		Respawn();
+	}
+}
+
+void AA01_BlockoutShooterCharacter::Respawn()
+{
+	Destroy();
+	//TODO FIX THIS!!!!!!!
+	// GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetGameState()->PlayerArray[0]->GetPlayerController());
+	if (GameState)
+	{
+		GameState->TeamOneScored(1);
 	}
 }
 

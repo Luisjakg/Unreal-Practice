@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/TextBlock.h"
 #include "Blueprint/UserWidget.h"
+#include "ShooterGameState.h"
 #include "ScoreWidget.generated.h"
 
 
@@ -22,8 +23,9 @@ protected:
 	UPROPERTY(meta = (BindWidget))
 	UTextBlock* TeamTwoScore;
 
+	AShooterGameState* GameState;
+
 public:
 	virtual void NativeConstruct() override;
-	virtual void NativeTick
-	(const FGeometry& MyGeometry, float InDeltaTime) override;
+	virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
 };

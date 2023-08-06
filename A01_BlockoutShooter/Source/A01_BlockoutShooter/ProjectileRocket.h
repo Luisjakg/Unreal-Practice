@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
-#include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
 #include "ProjectileRocket.generated.h"
 
@@ -20,6 +19,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
     UNiagaraSystem* NS_Explosion;
+
+	UPROPERTY(EditAnywhere)
+	float Damage = 20;
 
 protected:
 	// Called when the game starts or when spawned

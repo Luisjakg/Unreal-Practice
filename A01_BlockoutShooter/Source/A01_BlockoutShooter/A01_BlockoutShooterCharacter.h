@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "ScoreWidget.h"
+#include "ShooterGameState.h"
 #include "A01_BlockoutShooterCharacter.generated.h"
 
 
@@ -12,7 +14,7 @@ UCLASS(config=Game)
 class AA01_BlockoutShooterCharacter : public ACharacter
 {
 	GENERATED_BODY()
-
+	
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
@@ -40,7 +42,6 @@ class AA01_BlockoutShooterCharacter : public ACharacter
 public:
 	AA01_BlockoutShooterCharacter();
 	
-
 protected:
 
 	/** Called for movement input */
@@ -62,5 +63,19 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+	
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UScoreWidget> ScoreWidgetClass;
+
+	UPROPERTY(EditAnywhere)
+     float MaxHealth = 100;
+    UPROPERTY(EditAnywhere)
+     float CurrentHealth;
+	
+    void DealDamage(int Damage);
+    void Respawn();
+
+	AShooterGameState* GameState;
+
 };
 
