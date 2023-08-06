@@ -44,8 +44,12 @@ void AProjectileRocket::OnRocketHit(UPrimitiveComponent* HitComponent, AActor* O
 	UPrimitiveComponent* OtherComponent, FVector Normal, const FHitResult& HitResult)
 {
 	if(OtherActor && Owner != OtherActor) {
-     UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
-     Destroy();
+		UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
+		if(NS_Explosion)
+		{
+			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
+		}
+		Destroy();
     }
 
 }

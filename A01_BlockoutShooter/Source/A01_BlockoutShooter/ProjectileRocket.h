@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "NiagaraSystem.h"
+#include "NiagaraFunctionLibrary.h"
 #include "ProjectileRocket.generated.h"
 
 UCLASS()
@@ -15,6 +17,9 @@ class A01_BLOCKOUTSHOOTER_API AProjectileRocket : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AProjectileRocket();
+
+	UPROPERTY(EditAnywhere)
+    UNiagaraSystem* NS_Explosion;
 
 protected:
 	// Called when the game starts or when spawned
