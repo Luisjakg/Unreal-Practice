@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 using UnrealBuildTool;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ public class A01_BlockoutShooterEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
-		ExtraModuleNames.Add("A01_BlockoutShooter");
+
+		ExtraModuleNames.AddRange( new string[] { "A01_BlockoutShooter" } );
 	}
 }
