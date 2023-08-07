@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "SpawnLocation.h"
 #include "ShooterGameState.generated.h"
 
 /**
@@ -25,4 +26,9 @@ public:
     void TeamOneScored(int Amount);
 	
     void TeamTwoScored(int Amount);
+
+	virtual void BeginPlay() override;
+    void RestartPlayer();
+    TArray<ASpawnLocation*> SpawnLocations;
+
 };

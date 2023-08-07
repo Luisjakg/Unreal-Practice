@@ -91,11 +91,10 @@ void AA01_BlockoutShooterCharacter::DealDamage(int Damage)
 void AA01_BlockoutShooterCharacter::Respawn()
 {
 	Destroy();
-	//TODO FIX THIS!!!!!!!
-	// GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetGameState()->PlayerArray[0]->GetPlayerController());
-	if (GameState)
+	if(GameState)
 	{
 		GameState->TeamOneScored(1);
+		GameState->RestartPlayer();
 	}
 }
 
