@@ -9,6 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "ItemComponent.h"
 #include "GameFramework/PlayerState.h"
 
 
@@ -98,6 +99,20 @@ void AA01_BlockoutShooterCharacter::Respawn()
 	}
 }
 
+void AA01_BlockoutShooterCharacter::FireWeapon()
+{
+	if (HeldWeapon)
+    {
+    	ServerFireWeapon();
+    }
+
+}
+
+void AA01_BlockoutShooterCharacter::ServerFireWeapon_Implementation()
+{
+	//HeldWeapon->Use();
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -116,6 +131,8 @@ void AA01_BlockoutShooterCharacter::SetupPlayerInputComponent(class UInputCompon
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AA01_BlockoutShooterCharacter::Look);
 
+		//Primary Fire
+		EnhancedInputComponent->BindAction(PrimaryFireAction, ETriggerEvent::Started, this, &AA01_BlockoutShooterCharacter::FireWeapon);
 	}
 
 }

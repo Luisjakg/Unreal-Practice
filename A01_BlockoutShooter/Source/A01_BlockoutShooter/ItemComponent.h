@@ -2,14 +2,14 @@
 
 #include "CoreMinimal.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "A01_BlockoutShooterCharacter.h"
 #include "ItemComponent.generated.h"
 
 // Forward declaration of AA01_BlockoutShooterCharacter class
 
 class AA01_BlockoutShooterCharacter;
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+UCLASS()
+
 class A01_BLOCKOUTSHOOTER_API UItemComponent : public USkeletalMeshComponent
 {
 	GENERATED_BODY()

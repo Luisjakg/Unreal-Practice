@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
 #include "SpawnLocation.h"
+#include "Net/UnrealNetwork.h"
 #include "ShooterGameState.generated.h"
 
 /**
@@ -17,11 +18,13 @@ class A01_BLOCKOUTSHOOTER_API AShooterGameState : public AGameStateBase
 public:
 	AShooterGameState();	
 	
-	UPROPERTY()
+	UPROPERTY(Replicated)
 	int TeamOneScore;
 	
-    UPROPERTY()
+    UPROPERTY(Replicated)
     int TeamTwoScore;
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
     void TeamOneScored(int Amount);
 	

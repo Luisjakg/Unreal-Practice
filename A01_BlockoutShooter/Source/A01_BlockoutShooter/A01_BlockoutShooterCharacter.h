@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "ScoreWidget.h"
+#include "ItemComponent.h"
 #include "ShooterGameState.h"
 #include "A01_BlockoutShooterCharacter.generated.h"
 
@@ -72,10 +73,21 @@ public:
     UPROPERTY(EditAnywhere)
      float CurrentHealth;
 	
+	UItemComponent* HeldWeapon;
+	
     void DealDamage(int Damage);
     void Respawn();
 
 	AShooterGameState* GameState;
+
+	UPROPERTY(EditAnywhere)
+	UInputAction* PrimaryFireAction;
+
+	void FireWeapon();
+		
+    UFUNCTION(Server, Reliable)
+	void ServerFireWeapon();
+
 
 };
 

@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "Net/UnrealNetwork.h"
 #include "ProjectileRocket.generated.h"
 
 UCLASS()
@@ -32,11 +33,11 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// The Rocket Mesh
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", Replicated)
 	UStaticMeshComponent* RocketMesh;
 
 	// The Projectile Movement Component
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", Replicated)
 	UProjectileMovementComponent* ProjectileMovementComponent;
 
 	// Reference to the owner class
@@ -48,4 +49,8 @@ public:
 
 	// Function that will start firing the rocket in a provided direction
 	void FireInDirection(const FVector& ShootDirection);
+
+	UFUNCTION(Server, Reliable)
+	void ServerExplode(AActor* OtherActor, const FHitResult& HitResult);
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };

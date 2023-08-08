@@ -14,14 +14,27 @@ AShooterGameState::AShooterGameState()
 	TeamTwoScore = 0;
 }
 
+void AShooterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AShooterGameState, TeamOneScore);
+    DOREPLIFETIME(AShooterGameState, TeamTwoScore);
+}
+
 void AShooterGameState::TeamOneScored(int Amount)
 {
-	TeamOneScore += Amount;
+	if(HasAuthority())
+	{
+		TeamOneScore += Amount;
+	}
 }
 
 void AShooterGameState::TeamTwoScored(int Amount)
 {
-	TeamTwoScore += Amount;
+	if(HasAuthority())
+	{
+		TeamTwoScore += Amount;
+	}
 }
 
 void AShooterGameState::BeginPlay()

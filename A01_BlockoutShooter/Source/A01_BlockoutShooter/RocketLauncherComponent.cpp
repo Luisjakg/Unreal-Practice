@@ -14,7 +14,7 @@ URocketLauncherComponent::URocketLauncherComponent()
 
 void URocketLauncherComponent::Attach(AA01_BlockoutShooterCharacter* AttachCharacter)
 {
-	
+	Super::Attach(AttachCharacter);
 	if(!AttachCharacter)
 	{
 		// print error message
@@ -24,8 +24,9 @@ void URocketLauncherComponent::Attach(AA01_BlockoutShooterCharacter* AttachChara
 	Character = AttachCharacter;
 	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 	AttachToComponent(Character->GetMesh(), AttachmentRules, FName("GunPoint"));
+	Character->HeldWeapon = this;
 	SetRelativeRotation(FRotator(90,180,0));
-
+	/*
 	APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
 	if(PlayerController)
 	{
@@ -39,10 +40,7 @@ void URocketLauncherComponent::Attach(AA01_BlockoutShooterCharacter* AttachChara
 		{
 			EnhancedInputComponent->BindAction(PrimaryFireAction, ETriggerEvent::Started, this, &URocketLauncherComponent::Use);
 		}
-	}
-
-	
-	Super::Attach(AttachCharacter);
+	}*/
 }
 
 void URocketLauncherComponent::Detach()
@@ -53,6 +51,15 @@ void URocketLauncherComponent::Detach()
 
 void URocketLauncherComponent::Use()
 {
+	if (Character)
+	{
+		ServerSpawnRocket();
+	}
+	Super::Use();
+}
+
+void URocketLauncherComponent::ServerSpawnRocket_Implementation()
+{
 	FVector SpawnLocation = GetComponentLocation() + BarrelOffset + Character->GetActorForwardVector() * 100;
 	FRotator SpawnRotation = GetComponentRotation();
 	AProjectileRocket* SpawnedRocket = Cast<AProjectileRocket>(GetWorld()->SpawnActor(RocketClass, &SpawnLocation, &SpawnRotation));
@@ -62,7 +69,4 @@ void URocketLauncherComponent::Use()
 		SpawnedRocket->Owner = Character;
 		SpawnedRocket->FireInDirection(Character->GetActorForwardVector());
 	}
-
-	
-	Super::Use();
 }

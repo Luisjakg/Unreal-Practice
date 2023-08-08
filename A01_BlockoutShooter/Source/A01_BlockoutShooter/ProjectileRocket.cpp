@@ -15,7 +15,9 @@ AProjectileRocket::AProjectileRocket()
     RootComponent = RocketMesh;
     ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement"));
     ProjectileMovementComponent -> SetUpdatedComponent(RocketMesh);
-
+	bReplicates = true;
+	RocketMesh->SetIsReplicated(true);
+	ProjectileMovementComponent->SetIsReplicated(true);
 }
 
 // Called when the game starts or when spawned
@@ -44,6 +46,30 @@ void AProjectileRocket::Tick(float DeltaTime)
 void AProjectileRocket::OnRocketHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComponent, FVector Normal, const FHitResult& HitResult)
 {
+	if(HasAuthority())
+	{
+		if(OtherActor && Owner != OtherActor)
+		{
+			ServerExplode(OtherActor, HitResult);
+		}
+	}
+}
+
+void AProjectileRocket::FireInDirection(const FVector& ShootDirection)
+{
+	ProjectileMovementComponent->Velocity = ShootDirection * ProjectileMovementComponent->InitialSpeed;
+	RocketMesh->AddImpulse(ShootDirection * ProjectileMovementComponent->InitialSpeed);
+}
+
+void AProjectileRocket::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AProjectileRocket, RocketMesh);
+    DOREPLIFETIME(AProjectileRocket, ProjectileMovementComponent);
+}
+
+void AProjectileRocket::ServerExplode_Implementation(AActor* OtherActor, const FHitResult& HitResult)
+{
 	if(OtherActor && Owner != OtherActor) {
 		UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
 		if(NS_Explosion)
@@ -51,28 +77,21 @@ void AProjectileRocket::OnRocketHit(UPrimitiveComponent* HitComponent, AActor* O
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
 		}
 		TArray<FHitResult> HitResults;
-        FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(500);
-        GetWorld()->SweepMultiByChannel(HitResults, HitResult.Location, HitResult.Location, FQuat::Identity, ECC_Pawn, CollisionSphere);
+		FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(500);
+		GetWorld()->SweepMultiByChannel(HitResults, HitResult.Location, HitResult.Location, FQuat::Identity, ECC_Pawn, CollisionSphere);
 
 		if(HitResults.Num() > 0)
-        {
-        	for(FHitResult Hit : HitResults)
-        	{
-        		AA01_BlockoutShooterCharacter* HitCharacter = Cast<AA01_BlockoutShooterCharacter>(Hit.GetActor());
-        		if(HitCharacter)
-        		{
-        			HitCharacter->DealDamage(Damage);
-        		}
-        	}
-        }
+		{
+			for(FHitResult Hit : HitResults)
+			{
+				AA01_BlockoutShooterCharacter* HitCharacter = Cast<AA01_BlockoutShooterCharacter>(Hit.GetActor());
+				if(HitCharacter)
+				{
+					HitCharacter->DealDamage(Damage);
+				}
+			}
+		}
 		Destroy();
-    }
-
-}
-
-void AProjectileRocket::FireInDirection(const FVector& ShootDirection)
-{
-	ProjectileMovementComponent->Velocity = ShootDirection * ProjectileMovementComponent->InitialSpeed;
-	RocketMesh->AddImpulse(ShootDirection * ProjectileMovementComponent->InitialSpeed);
+	}
 }
 

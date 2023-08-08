@@ -37,4 +37,8 @@ public:
 	virtual void Attach(AA01_BlockoutShooterCharacter* AttachCharacter) override;
 	virtual void Detach() override;
 	virtual void Use() override;
+	
+	UFUNCTION(Server, Reliable)
+     void ServerSpawnRocket();
+
 };

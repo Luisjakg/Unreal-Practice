@@ -3,6 +3,8 @@
 
 #include "CollectableActor.h"
 
+#include "A01_BlockoutShooterCharacter.h"
+
 // Sets default values
 ACollectableActor::ACollectableActor()
 {
