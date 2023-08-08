@@ -7,17 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec1057a7-9f18-4f14-8297-7e4c186790bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SKM_Manny_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SKM_Manny_Simple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SKM_Quinn_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SKM_Quinn_Simple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/66/0OP5U85W4H0R7CHG999ZDN.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" afterDir="false" />
-    </list>
+    <list default="true" id="ec1057a7-9f18-4f14-8297-7e4c186790bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +109,7 @@
       <updated>1691473428951</updated>
       <workItem from="1691473430212" duration="650000" />
       <workItem from="1691474104689" duration="571000" />
-      <workItem from="1691482210262" duration="1329000" />
+      <workItem from="1691482210262" duration="1388000" />
     </task>
     <servers />
   </component>
