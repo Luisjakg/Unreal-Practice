@@ -6,6 +6,7 @@
 #include "GameFramework/GameStateBase.h"
 #include "SpawnLocation.h"
 #include "Net/UnrealNetwork.h"
+#include "ShooterPlayerState.h"
 #include "ShooterGameState.generated.h"
 
 /**
@@ -31,7 +32,18 @@ public:
     void TeamTwoScored(int Amount);
 
 	virtual void BeginPlay() override;
-    void RestartPlayer();
+	
+	void PlayerScored(APlayerState* PlayerState);
+	void RestartPlayer(APlayerState* PlayerState);
+	
     TArray<ASpawnLocation*> SpawnLocations;
+
+	UPROPERTY(EditAnywhere)
+     TArray<AShooterPlayerState*> TeamOne;
+	
+    UPROPERTY(EditAnywhere)
+	TArray<AShooterPlayerState*> TeamTwo;
+	
+    virtual void AddPlayerState(APlayerState* PlayerState) override;
 
 };

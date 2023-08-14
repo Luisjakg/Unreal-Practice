@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -8,19 +6,21 @@
 #include "Components/SphereComponent.h"
 #include "CollectableActor.generated.h"
 
+class AWeaponPlatform;
+
 UCLASS()
 class A01_BLOCKOUTSHOOTER_API ACollectableActor : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:
 	// Sets default values for this actor's properties
 	ACollectableActor();
-	
-	UPROPERTY(EditAnywhere)
+
+	UPROPERTY(EditAnywhere, Replicated) // Adding Replicated to enable network replication
 	USphereComponent* Hitbox;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Replicated) // Adding Replicated to enable network replication
 	UItemComponent* ItemComponent;
 
 	UFUNCTION()
@@ -34,8 +34,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	AWeaponPlatform* Spawner;
 };

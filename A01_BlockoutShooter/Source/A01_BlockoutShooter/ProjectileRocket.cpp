@@ -15,6 +15,7 @@ AProjectileRocket::AProjectileRocket()
     RootComponent = RocketMesh;
     ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement"));
     ProjectileMovementComponent -> SetUpdatedComponent(RocketMesh);
+	
 	bReplicates = true;
 	RocketMesh->SetIsReplicated(true);
 	ProjectileMovementComponent->SetIsReplicated(true);
@@ -68,14 +69,19 @@ void AProjectileRocket::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(AProjectileRocket, ProjectileMovementComponent);
 }
 
+void AProjectileRocket::MulticastExplode_Implementation()
+{
+	if(NS_Explosion)
+	{
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
+	}
+}
+
 void AProjectileRocket::ServerExplode_Implementation(AActor* OtherActor, const FHitResult& HitResult)
 {
 	if(OtherActor && Owner != OtherActor) {
 		UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
-		if(NS_Explosion)
-		{
-			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
-		}
+		MulticastExplode();
 		TArray<FHitResult> HitResults;
 		FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(500);
 		GetWorld()->SweepMultiByChannel(HitResults, HitResult.Location, HitResult.Location, FQuat::Identity, ECC_Pawn, CollisionSphere);

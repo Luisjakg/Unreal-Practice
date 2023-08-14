@@ -51,6 +51,8 @@ AA01_BlockoutShooterCharacter::AA01_BlockoutShooterCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	
 }
 
 void AA01_BlockoutShooterCharacter::BeginPlay()
@@ -91,12 +93,14 @@ void AA01_BlockoutShooterCharacter::DealDamage(int Damage)
 
 void AA01_BlockoutShooterCharacter::Respawn()
 {
+	APlayerState* MyPlayerState = GetPlayerState();
+	if (HeldWeapon)
+    {
+    	HeldWeapon->GetOwner()->Destroy();
+    }
 	Destroy();
-	if(GameState)
-	{
-		GameState->TeamOneScored(1);
-		GameState->RestartPlayer();
-	}
+	GameState->PlayerScored(MyPlayerState);
+	GameState->RestartPlayer(MyPlayerState);
 }
 
 void AA01_BlockoutShooterCharacter::FireWeapon()
@@ -110,7 +114,7 @@ void AA01_BlockoutShooterCharacter::FireWeapon()
 
 void AA01_BlockoutShooterCharacter::ServerFireWeapon_Implementation()
 {
-	//HeldWeapon->Use();
+	HeldWeapon->Use();
 }
 
 //////////////////////////////////////////////////////////////////////////

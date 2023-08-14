@@ -53,4 +53,7 @@ public:
 	UFUNCTION(Server, Reliable)
 	void ServerExplode(AActor* OtherActor, const FHitResult& HitResult);
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastExplode();
 };
