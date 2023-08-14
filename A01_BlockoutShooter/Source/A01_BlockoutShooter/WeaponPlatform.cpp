@@ -6,18 +6,18 @@
 // Sets default values
 AWeaponPlatform::AWeaponPlatform()
 {
+	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
+	SpawnerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	SpawnerMesh->SetupAttachment(RootComponent);
+	
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
 void AWeaponPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
-    SpawnerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-    SpawnerMesh->SetupAttachment(RootComponent);
 	StartTimer();
 }
 
@@ -25,7 +25,6 @@ void AWeaponPlatform::BeginPlay()
 void AWeaponPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void AWeaponPlatform::StartTimer()

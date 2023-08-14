@@ -26,12 +26,17 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* SpawnerMesh;
+	
 	UPROPERTY(EditAnywhere)
 	TArray<TSubclassOf<ACollectableActor>> WeaponClasses;
+	
 	FTimerHandle SpawnWeaponTimerHandle;
+	
 	void StartTimer();
+	
 	UFUNCTION()
 	void SpawnWeapon();
+	
 	UFUNCTION(Server, Reliable)
 	void ServerSpawnWeapon();
 

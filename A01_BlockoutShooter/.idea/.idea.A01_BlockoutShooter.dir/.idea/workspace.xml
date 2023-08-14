@@ -7,42 +7,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec1057a7-9f18-4f14-8297-7e4c186790bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset" afterDir="false" />
-    </list>
+    <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/A01_BlockoutShooter.uproject" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="2Tgn7Sa562aCezP8F8yTUaaa4UG" />
+  <component name="ProjectId" id="2TyebPINDHaCIUCwuwVXOe4fEhf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\luisj\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\luisj\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\luisj\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\luisj\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\luisj\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\luisj\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="A01_BlockoutShooter" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/A01_BlockoutShooter.uproject" />
@@ -104,17 +99,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ec1057a7-9f18-4f14-8297-7e4c186790bd" name="Changes" comment="" />
-      <created>1691473428951</created>
+      <changelist id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="" />
+      <created>1692019822679</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1691473428951</updated>
-      <workItem from="1691473430212" duration="650000" />
-      <workItem from="1691474104689" duration="571000" />
-      <workItem from="1691482210262" duration="1388000" />
-      <workItem from="1691931953536" duration="943000" />
-      <workItem from="1692007169825" duration="1590000" />
-      <workItem from="1692011018386" duration="6007000" />
+      <updated>1692019822679</updated>
+      <workItem from="1692019823954" duration="4341000" />
     </task>
     <servers />
   </component>

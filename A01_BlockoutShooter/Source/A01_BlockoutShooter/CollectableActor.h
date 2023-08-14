@@ -39,5 +39,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
 	AWeaponPlatform* Spawner;
 };
