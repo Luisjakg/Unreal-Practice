@@ -8,18 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec1057a7-9f18-4f14-8297-7e4c186790bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_A01_BlockoutShooterGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_A01_BlockoutShooterGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ProjectileRocket.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ProjectileRocket.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/CollectableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/CollectableActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/CollectableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/CollectableActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ShooterGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ShooterGameState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ShooterGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ShooterGameState.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +114,7 @@
       <workItem from="1691482210262" duration="1388000" />
       <workItem from="1691931953536" duration="943000" />
       <workItem from="1692007169825" duration="1590000" />
-      <workItem from="1692011018386" duration="5819000" />
+      <workItem from="1692011018386" duration="6007000" />
     </task>
     <servers />
   </component>
