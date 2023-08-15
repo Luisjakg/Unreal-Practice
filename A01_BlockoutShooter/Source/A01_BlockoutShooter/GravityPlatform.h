@@ -15,6 +15,9 @@ class A01_BLOCKOUTSHOOTER_API AGravityPlatform : public AActor
 public:
 	AGravityPlatform();
 
+	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* SpawnerMesh;
+
 	UPROPERTY(EditAnywhere, Replicated)
 	UBoxComponent* Hitbox;
 	

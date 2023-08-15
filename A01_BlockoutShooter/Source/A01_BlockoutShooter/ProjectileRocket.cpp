@@ -80,7 +80,7 @@ void AProjectileRocket::MulticastExplode_Implementation()
 void AProjectileRocket::ServerExplode_Implementation(AActor* OtherActor, const FHitResult& HitResult)
 {
 	if(OtherActor && Owner != OtherActor) {
-		UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
+		//UE_LOG(LogTemp, Warning, TEXT("Rocket Exploded"));
 		MulticastExplode();
 		TArray<FHitResult> HitResults;
 		FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(500);

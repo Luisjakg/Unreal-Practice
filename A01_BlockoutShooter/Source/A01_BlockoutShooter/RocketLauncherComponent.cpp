@@ -65,7 +65,7 @@ void URocketLauncherComponent::ServerSpawnRocket_Implementation()
 	AProjectileRocket* SpawnedRocket = Cast<AProjectileRocket>(GetWorld()->SpawnActor(RocketClass, &SpawnLocation, &SpawnRotation));
 	if(SpawnedRocket)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Cast Worked!"));
+		//UE_LOG(LogTemp, Warning, TEXT("Cast Worked!"));
 		SpawnedRocket->Owner = Character;
 		SpawnedRocket->FireInDirection(Character->GetActorForwardVector());
 	}
