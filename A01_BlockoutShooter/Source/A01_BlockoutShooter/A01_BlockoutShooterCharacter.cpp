@@ -8,6 +8,8 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
 #include "EnhancedInputSubsystems.h"
 #include "ItemComponent.h"
 #include "GameFramework/PlayerState.h"
@@ -96,6 +98,10 @@ void AA01_BlockoutShooterCharacter::Respawn()
 	APlayerState* MyPlayerState = GetPlayerState();
 	if (HeldWeapon)
     {
+		if(HasAuthority())
+		{
+			DeathParticles();
+		}
     	HeldWeapon->GetOwner()->Destroy();
     }
 	Destroy();
@@ -110,6 +116,21 @@ void AA01_BlockoutShooterCharacter::FireWeapon()
     	ServerFireWeapon();
     }
 
+}
+
+void AA01_BlockoutShooterCharacter::DeathParticles_Implementation()
+{
+	if(NS_DeathParticle)
+	{
+		
+		FVector SpawnLocation = this->GetActorLocation() + DeathParticleOffset;
+		FLinearColor ParticleColor = GameState->GetTeamColour(GetPlayerState());
+		float ParticleScale = FMath::Lerp(1.0f, 3.0f, GameState->GetScoreRatio(GetPlayerState()));
+		UNiagaraComponent* ParticleComponent = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_DeathParticle,
+		 SpawnLocation, this->GetActorRotation());
+		ParticleComponent->SetNiagaraVariableLinearColor(FString("SkullColor"),ParticleColor);
+		ParticleComponent->SetNiagaraVariableFloat(FString("SkullScale"), ParticleScale);
+	}
 }
 
 void AA01_BlockoutShooterCharacter::ServerFireWeapon_Implementation()

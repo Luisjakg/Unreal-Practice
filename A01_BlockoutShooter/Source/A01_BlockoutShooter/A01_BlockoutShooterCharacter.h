@@ -7,6 +7,8 @@
 #include "InputActionValue.h"
 #include "ScoreWidget.h"
 #include "ItemComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Net/UnrealNetwork.h"
 #include "ShooterGameState.h"
 #include "A01_BlockoutShooterCharacter.generated.h"
 
@@ -88,6 +90,13 @@ public:
     UFUNCTION(Server, Reliable)
 	void ServerFireWeapon();
 
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* NS_DeathParticle;
+	
+	FVector DeathParticleOffset = FVector(0,0,-75);
+	 
+	UFUNCTION(NetMulticast, Reliable)
+	void DeathParticles();
 
 };
 

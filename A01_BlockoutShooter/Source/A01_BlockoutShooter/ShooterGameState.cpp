@@ -107,3 +107,30 @@ void AShooterGameState::AddPlayerState(APlayerState* PlayerState)
 		}
 	}
 }
+
+FLinearColor AShooterGameState::GetTeamColour(APlayerState* PlayerState)
+{
+	if (TeamOne.Contains(PlayerState))
+	{
+		return FLinearColor::Blue;
+	}
+	else
+	{
+		return FLinearColor::Red;
+	}
+}
+
+float AShooterGameState::GetScoreRatio(APlayerState* PlayerState)
+{
+	float Ratio = 0;
+	if(TeamOne.Contains(PlayerState))
+	{
+		Ratio = static_cast<float>(TeamOneScore) / TeamTwoScore;
+	}
+	else
+	{
+		Ratio = static_cast<float>(TeamTwoScore) / TeamOneScore;
+	}
+
+	return FMath::Clamp(Ratio, 0.f, 1.f);
+}

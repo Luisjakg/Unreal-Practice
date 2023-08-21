@@ -46,4 +46,9 @@ public:
 	
     virtual void AddPlayerState(APlayerState* PlayerState) override;
 
+	FLinearColor GetTeamColour(APlayerState* PlayerState);
+	
+    float GetScoreRatio(APlayerState* PlayerState);
+
+
 };
