@@ -66,7 +66,16 @@ void URocketLauncherComponent::ServerSpawnRocket_Implementation()
 	if(SpawnedRocket)
 	{
 		//UE_LOG(LogTemp, Warning, TEXT("Cast Worked!"));
-		SpawnedRocket->Owner = Character;
-		SpawnedRocket->FireInDirection(Character->GetActorForwardVector());
+		SpawnedRocket->Owner = Character;	
+		SpawnedRocket->FireInDirection(Character->GetFollowCamera()->GetForwardVector());
+		MulticastShootParticle(SpawnLocation, SpawnRotation);
+	}
+}
+
+void URocketLauncherComponent::MulticastShootParticle_Implementation(FVector Location, FRotator Rotation)
+{
+	if (NS_ShootParticle)
+	{
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_ShootParticle, Location, Rotation);
 	}
 }

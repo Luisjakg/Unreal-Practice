@@ -19,6 +19,13 @@ AProjectileRocket::AProjectileRocket()
 	bReplicates = true;
 	RocketMesh->SetIsReplicated(true);
 	ProjectileMovementComponent->SetIsReplicated(true);
+
+	ExplosionRadius = CreateDefaultSubobject<USphereComponent>(TEXT("Explosion Hitbox"));
+	ExplosionRadius->SetupAttachment(FieldSystemComponent);
+	RadialFalloff = CreateDefaultSubobject<URadialFalloff>(TEXT("Radial Falloff"));
+	RadialVector = CreateDefaultSubobject<URadialVector>(TEXT("Radial Vector"));
+	CullingField = CreateDefaultSubobject<UCullingField>(TEXT("Culling Field"));
+	FieldSystemComponent->SetIsReplicated(true);
 }
 
 // Called when the game starts or when spawned
@@ -74,6 +81,11 @@ void AProjectileRocket::MulticastExplode_Implementation()
 	if(NS_Explosion)
 	{
 		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_Explosion, this->GetActorLocation(), this->GetActorRotation());
+		RadialFalloff->SetRadialFalloff(ExplosionStrain, 0, 1, 0, ExplosionRadius->GetScaledSphereRadius(), RocketMesh->GetComponentLocation(), EFieldFalloffType::Field_FallOff_None);
+		RadialVector->SetRadialVector(ExplosionVelocity, RocketMesh->GetComponentLocation());
+		CullingField->SetCullingField(RadialFalloff, RadialVector, EFieldCullingOperationType::Field_Culling_Outside);
+		FieldSystemComponent->ApplyPhysicsField(true, EFieldPhysicsType::Field_ExternalClusterStrain, nullptr, RadialFalloff);
+		FieldSystemComponent->ApplyPhysicsField(true, EFieldPhysicsType::Field_LinearVelocity, nullptr, CullingField);
 	}
 }
 

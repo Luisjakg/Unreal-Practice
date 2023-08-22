@@ -2,6 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "ItemComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Net/UnrealNetwork.h"
+#include "Camera/CameraComponent.h"
 #include "RocketLauncherComponent.generated.h"
 
 class AProjectileRocket;
@@ -41,4 +44,9 @@ public:
 	UFUNCTION(Server, Reliable)
      void ServerSpawnRocket();
 
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* NS_ShootParticle;
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastShootParticle(FVector Location, FRotator Rotation);
 };

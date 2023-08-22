@@ -95,15 +95,16 @@ void AA01_BlockoutShooterCharacter::DealDamage(int Damage)
 
 void AA01_BlockoutShooterCharacter::Respawn()
 {
+	
 	APlayerState* MyPlayerState = GetPlayerState();
 	if (HeldWeapon)
     {
-		if(HasAuthority())
-		{
-			DeathParticles();
-		}
     	HeldWeapon->GetOwner()->Destroy();
     }
+	if(HasAuthority())
+	{
+		DeathParticles();
+	}
 	Destroy();
 	GameState->PlayerScored(MyPlayerState);
 	GameState->RestartPlayer(MyPlayerState);

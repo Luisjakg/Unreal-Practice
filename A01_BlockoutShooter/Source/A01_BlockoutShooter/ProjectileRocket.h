@@ -6,11 +6,16 @@
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "Field/FieldSystemActor.h"
+#include "Components/SphereComponent.h"
+#include "Field/FieldSystemActor.h"
+#include "Field/FieldSystemObjects.h"
+#include "Field/FieldSystemComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "ProjectileRocket.generated.h"
 
 UCLASS()
-class A01_BLOCKOUTSHOOTER_API AProjectileRocket : public AActor
+class A01_BLOCKOUTSHOOTER_API AProjectileRocket : public AFieldSystemActor
 {
 	GENERATED_BODY()
 	
@@ -23,6 +28,24 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float Damage = 20;
+
+	UPROPERTY(EditAnywhere)
+	USphereComponent* ExplosionRadius;
+	
+	UPROPERTY(EditAnywhere)
+	URadialFalloff* RadialFalloff;
+	
+	UPROPERTY(EditAnywhere)
+	UCullingField* CullingField;
+	
+	UPROPERTY(EditAnywhere)
+	URadialVector* RadialVector;
+	
+	UPROPERTY(EditAnywhere)
+	float ExplosionStrain = 500000;
+	
+	UPROPERTY(EditAnywhere)
+	float ExplosionVelocity = 2000;
 
 protected:
 	// Called when the game starts or when spawned
