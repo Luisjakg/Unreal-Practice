@@ -9,7 +9,7 @@ public class A01_BlockoutShooter : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine",
-			"InputCore" , "EnhancedInput", "Niagara"});
+			"InputCore" , "EnhancedInput", "Niagara", "CableComponent"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

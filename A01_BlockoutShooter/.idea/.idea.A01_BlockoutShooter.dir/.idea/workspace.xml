@@ -11,19 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/A01_BlockoutShooter.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/A01_BlockoutShooter.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_RocketLauncher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_RocketLauncher.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_WeaponPlatform.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_WeaponPlatform.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Effects/NS_Spawn.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Wall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Basic_Wall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/KZ/X6VQXCTVX1RDWC2F8JJ38Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/KZ/X6VQXCTVX1RDWC2F8JJ38Y.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platforms/HoloLens/Config/HoloLensEngine.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooter.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +129,7 @@
       <workItem from="1692669641669" duration="252000" />
       <workItem from="1692677036452" duration="5893000" />
       <workItem from="1692683031829" duration="517000" />
+      <workItem from="1693215312529" duration="9497000" />
     </task>
     <servers />
   </component>

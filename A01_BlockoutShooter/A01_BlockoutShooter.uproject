@@ -13,7 +13,8 @@
 				"UMG",
 				"Niagara",
 				"FieldSystemEngine",
-				"GeometryCollectionEngine"
+				"GeometryCollectionEngine",
+				"CableComponent"
 			]
 		}
 	],
