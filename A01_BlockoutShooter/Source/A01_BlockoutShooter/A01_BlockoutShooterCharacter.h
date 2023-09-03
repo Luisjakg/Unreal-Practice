@@ -5,8 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "NiagaraDataInterfaceExport.h"
 #include "ScoreWidget.h"
 #include "ItemComponent.h"
+#include "BlasterExplosion.h"
 #include "NiagaraFunctionLibrary.h"
 #include "Net/UnrealNetwork.h"
 #include "ShooterGameState.h"
@@ -14,7 +16,7 @@
 
 
 UCLASS(config=Game)
-class AA01_BlockoutShooterCharacter : public ACharacter
+class AA01_BlockoutShooterCharacter : public ACharacter, public INiagaraParticleCallbackHandler
 {
 	GENERATED_BODY()
 	
@@ -98,5 +100,13 @@ public:
 	UFUNCTION(NetMulticast, Reliable)
 	void DeathParticles();
 
+	virtual void ReceiveParticleData_Implementation(const TArray
+		<FBasicParticleData>& Data, UNiagaraSystem*NiagaraSystem,
+		const FVector& SimulationPositionOffsetoverride) override;
+	
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<ABlasterExplosion> BlasterExplosionClass;
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnExplosion(const TArray<FBasicParticleData>& Data);
 };
 

@@ -15,11 +15,15 @@ AFlyingBridge::AFlyingBridge()
 	PhysicsConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("Physics Constraint"));
 	Rope1 = CreateDefaultSubobject<UCableComponent>(TEXT("Rope1"));
 	Rope2 = CreateDefaultSubobject<UCableComponent>(TEXT("Rope2"));
+	Rope3 = CreateDefaultSubobject<UCableComponent>(TEXT("Rope3"));
+	Rope4 = CreateDefaultSubobject<UCableComponent>(TEXT("Rope4"));
 	BridgeMesh->SetupAttachment(RootComponent);
 	BaseMesh->SetupAttachment(RootComponent);
 	PhysicsConstraint->SetupAttachment(RootComponent);
 	Rope1->SetupAttachment(RootComponent);
 	Rope2->SetupAttachment(RootComponent);
+	Rope3->SetupAttachment(RootComponent);
+	Rope4->SetupAttachment(RootComponent);
 	BridgeMesh->SetSimulatePhysics(true);
 	bReplicates = true;
 	RootComponent->SetIsReplicated(true);
@@ -27,6 +31,8 @@ AFlyingBridge::AFlyingBridge()
 	PhysicsConstraint->SetIsReplicated(true);
 	Rope1->SetIsReplicated(true);
 	Rope2->SetIsReplicated(true);
+	Rope3->SetIsReplicated(true);
+	Rope4->SetIsReplicated(true);
 }
 
 // Called when the game starts or when spawned

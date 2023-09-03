@@ -39,4 +39,10 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UCableComponent* Rope2;
+
+	UPROPERTY(EditAnywhere)
+	UCableComponent* Rope3;
+
+	UPROPERTY(EditAnywhere)
+	UCableComponent* Rope4;
 };

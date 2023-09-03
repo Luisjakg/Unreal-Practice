@@ -18,7 +18,7 @@ AWreckingBall::AWreckingBall()
 	BallMesh->SetupAttachment(RootComponent);
 	PhysicsConstraint->SetupAttachment(RootComponent);
 	Rope->SetupAttachment(RootComponent);
-	BallMesh->SetSimulatePhysics(true);
+	BallMesh->SetSimulatePhysics(false);
 	BallMesh->SetEnableGravity(false);
 	bReplicates = true;
 	RootComponent->SetIsReplicated(true);

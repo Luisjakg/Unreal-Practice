@@ -12,13 +12,41 @@
   <component name="ChangeListManager">
     <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Lever.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Lever.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SeeSaw.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_SeeSaw.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Club.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Club_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Bomb_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Coins_04.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Coins_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Skull_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Item_Skull_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/SM_Wep_BlunderBuss_01_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_Atlas_01_A.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_FantasyAtlas_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_FantasyAtlas_A01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/T_FantasyAtlas_A01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/W01_-_Assets/Texture_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Club.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Club.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Club_Fixed.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Club_Fixed.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_FlyingBridge.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_FlyingBridge.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ProjectileRocket.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ProjectileRocket.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_RocketLauncher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_RocketLauncher.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_WeaponPlatform.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_WeaponPlatform.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_WreckingBall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_WreckingBall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Effects/NS_Death.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Effects/NS_Death.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Particles/Materials/M_Fire_SubUV.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Particles/Materials/M_Fire_SubUV.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/4P/0BJKCQ3ANLXR6PX4R8ADLI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/4P/0BJKCQ3ANLXR6PX4R8ADLI.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/RG/5TNPPDA39MNF3PUI860Q6I.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/RG/5TNPPDA39MNF3PUI860Q6I.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/3E/DQ2BD5L01OO0JRUHBZ01CP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/3E/DQ2BD5L01OO0JRUHBZ01CP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/XC/AIFTX90C0M2UK8LW0JFTE6.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/XC/AIFTX90C0M2UK8LW0JFTE6.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/SeeSaw.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/SeeSaw.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/2T/4A8XNSWW3ME9CEPOQFJRQ7.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/2T/4A8XNSWW3ME9CEPOQFJRQ7.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/KZ/X6VQXCTVX1RDWC2F8JJ38Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/KZ/X6VQXCTVX1RDWC2F8JJ38Y.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/A01_BlockoutShooterCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/Lever.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/Lever.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WreckingBall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WreckingBall.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -126,7 +155,11 @@
       <workItem from="1692669641669" duration="252000" />
       <workItem from="1692677036452" duration="5893000" />
       <workItem from="1692683031829" duration="517000" />
-      <workItem from="1693215312529" duration="11178000" />
+      <workItem from="1693215312529" duration="11772000" />
+      <workItem from="1693274223102" duration="640000" />
+      <workItem from="1693281908357" duration="5710000" />
+      <workItem from="1693707643901" duration="1561000" />
+      <workItem from="1693717548282" duration="1709000" />
     </task>
     <servers />
   </component>

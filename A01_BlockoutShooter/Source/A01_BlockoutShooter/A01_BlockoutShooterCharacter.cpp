@@ -119,6 +119,36 @@ void AA01_BlockoutShooterCharacter::FireWeapon()
 
 }
 
+void AA01_BlockoutShooterCharacter::ReceiveParticleData_Implementation(const TArray<FBasicParticleData>& Data,
+	UNiagaraSystem* NiagaraSystem, const FVector& SimulationPositionOffsetoverride)
+{
+	INiagaraParticleCallbackHandler::ReceiveParticleData_Implementation(
+		Data, NiagaraSystem, SimulationPositionOffsetoverride);
+
+	if(HasAuthority())
+	{
+		ServerSpawnExplosion(Data);
+	}
+}
+
+void AA01_BlockoutShooterCharacter::ServerSpawnExplosion_Implementation(const TArray<FBasicParticleData>& Data)
+{
+	for(int i = 0; i < Data.Num(); i++)
+	{
+		if(BlasterExplosionClass)
+		{
+			ABlasterExplosion* SpawnedExplosion = Cast<ABlasterExplosion>(GetWorld()->SpawnActor(BlasterExplosionClass,&Data[i].Position));
+			if(SpawnedExplosion)
+			{
+				SpawnedExplosion->VelocityAmount = 1000;
+				SpawnedExplosion->StrainAmount = 500000;
+				SpawnedExplosion->SetActorLocation(Data[i].Position);
+				SpawnedExplosion->Explode();
+			}
+		}
+	}
+}
+
 void AA01_BlockoutShooterCharacter::DeathParticles_Implementation()
 {
 	if(NS_DeathParticle)
