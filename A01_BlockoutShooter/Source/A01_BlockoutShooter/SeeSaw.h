@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "RotatingWorld.h"
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
@@ -30,5 +31,11 @@ public:
 	UStaticMeshComponent* BaseMesh;
 	UPROPERTY(EditAnywhere)
 	UPhysicsConstraintComponent* PhysicsConstraint;
+
+	UPROPERTY(EditAnywhere)
+	ARotatingWorld* RotatingWorld;
+
+private:
+	bool IsRotating;
 
 };

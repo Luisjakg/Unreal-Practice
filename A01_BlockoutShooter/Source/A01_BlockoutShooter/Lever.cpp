@@ -40,9 +40,9 @@ void ALever::Tick(float DeltaTime)
 
 	if(HasAuthority())
 	{
+
 		if(Arm->GetRelativeRotation().Pitch >= 45)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("On!"));
 			if(WreckingBall)
 			{
 				WreckingBall->BallMesh->SetSimulatePhysics(true);

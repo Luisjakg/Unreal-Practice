@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Net/UnrealNetwork.h" // Include this for replication
+#include "A01_BlockoutShooterCharacter.h"
 #include "RotatingWorld.generated.h"
 
 UCLASS()
@@ -20,13 +22,23 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	UFUNCTION()
+	void OnRep_TargetRotation();
 
-	// Rotate the world either horizontally or vertically
+	void RotateWorld(bool Horizontal, int Amount);
+
+	UFUNCTION(Server, Reliable)
+	void LaunchPlayersIntoAir();
+
+	// Replicated variables
+	UPROPERTY(ReplicatedUsing = OnRep_TargetRotation)
+	FRotator TargetRotation;
+
 	UFUNCTION(NetMulticast, Reliable)
-	void RotateWorld(bool Horizontal);
+	void MulticastRotate(bool Horizontal, int Amount);
 
 private:
-	FRotator TargetRotation;
 	float RotationSpeed;
 	bool bIsRotating;
 };

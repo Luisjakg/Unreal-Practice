@@ -22,6 +22,8 @@ ASeeSaw::ASeeSaw()
 	RootComponent->SetIsReplicated(true);
 	PlatformMesh->SetIsReplicated(true);
 	PhysicsConstraint->SetIsReplicated(true);
+
+	IsRotating = false;
 }
 
 // Called when the game starts or when spawned
@@ -35,6 +37,30 @@ void ASeeSaw::BeginPlay()
 void ASeeSaw::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (HasAuthority())
+	{
+		if (PlatformMesh->GetRelativeRotation().Pitch >= 15 && !IsRotating)
+		{
+			IsRotating = true;
+			RotatingWorld->RotateWorld(true, 90);
+		}
+		else if (PlatformMesh->GetRelativeRotation().Pitch <= -15 && !IsRotating)
+		{
+			IsRotating = true;
+			RotatingWorld->RotateWorld(true, -90);
+		}
+		// else if (PlatformMesh->GetRelativeRotation().Yaw  ==  && !IsRotating)
+		// {
+		// 	
+		// }
+		else if (BaseMesh->GetRelativeRotation().Pitch  == 0 && IsRotating)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("READY!"));
+			IsRotating = false;
+			// RotatingWorld->RotateWorld(true);
+		}
+	}
 
 }
 
