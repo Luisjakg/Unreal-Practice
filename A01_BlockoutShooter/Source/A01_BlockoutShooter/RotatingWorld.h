@@ -37,7 +37,7 @@ public:
 	UPROPERTY(ReplicatedUsing = OnRep_TargetRotation)
 	FRotator TargetRotation;
 
-	UFUNCTION(Server, Reliable)
+	UFUNCTION(NetMulticast, Reliable)
 	void MulticastRotate(FRotator Rotation);
 
 private:
