@@ -4,6 +4,7 @@
 #include "ItemComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "Net/UnrealNetwork.h"
+#include "ShooterGameState.h"
 #include "Camera/CameraComponent.h"
 #include "RocketLauncherComponent.generated.h"
 
@@ -43,6 +44,8 @@ public:
 	
 	UFUNCTION(Server, Reliable)
      void ServerSpawnRocket();
+
+	AShooterGameState* GameState;
 
 	UPROPERTY(EditAnywhere)
 	UNiagaraSystem* NS_ShootParticle;

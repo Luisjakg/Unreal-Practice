@@ -3,6 +3,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "A01_BlockoutShooterCharacter.h"
+#include "NiagaraComponent.h"
 #include "A01_BlockoutShooter/A01_BlockoutShooter.h"
 
 // Constructor
@@ -21,6 +22,7 @@ void URocketLauncherComponent::Attach(AA01_BlockoutShooterCharacter* AttachChara
 		UE_LOG(LogTemp, Warning, TEXT("AttachCharacter is null!"));
 		return;
 	}
+	GameState = Cast<AShooterGameState>(GetWorld()->GetGameState());
 	Character = AttachCharacter;
 	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 	AttachToComponent(Character->GetMesh(), AttachmentRules, FName("GunPoint"));
@@ -60,6 +62,7 @@ void URocketLauncherComponent::Use()
 
 void URocketLauncherComponent::ServerSpawnRocket_Implementation()
 {
+	// Choose a random color
 	FVector SpawnLocation = GetComponentLocation() + BarrelOffset + Character->GetActorForwardVector() * 100;
 	FRotator SpawnRotation = GetComponentRotation();
 	AProjectileRocket* SpawnedRocket = Cast<AProjectileRocket>(GetWorld()->SpawnActor(RocketClass, &SpawnLocation, &SpawnRotation));
@@ -76,6 +79,12 @@ void URocketLauncherComponent::MulticastShootParticle_Implementation(FVector Loc
 {
 	if (NS_ShootParticle)
 	{
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_ShootParticle, Location, Rotation);
+		FLinearColor ParticleColor =  GameState->GetTeamColour(Character->GetPlayerState());
+		UNiagaraComponent* ParticleComponent = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_ShootParticle, Location, Rotation);
+		if (ParticleComponent)
+		{
+			ParticleComponent->SetNiagaraVariableLinearColor("Color", ParticleColor);
+		}
+
 	}
 }
