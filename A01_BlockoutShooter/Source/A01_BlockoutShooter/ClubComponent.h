@@ -2,9 +2,9 @@
 
 #pragma once
 
+#include "A01_BlockoutShooterCharacter.h"
 #include "CoreMinimal.h"
 #include "ItemComponent.h"
-#include "A01_BlockoutShooterCharacter.h"
 #include "ClubComponent.generated.h"
 
 /**

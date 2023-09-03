@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "SeeSaw.h"
 
 // Sets default values
@@ -24,6 +21,7 @@ ASeeSaw::ASeeSaw()
 	PhysicsConstraint->SetIsReplicated(true);
 
 	IsRotating = false;
+	active = false;
 }
 
 // Called when the game starts or when spawned
@@ -31,36 +29,64 @@ void ASeeSaw::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// Store the initial rotation of the SeeSaw
+	AdditionalRotation = FRotator(0, 0, 0);
+	
 }
 
 // Called every frame
 void ASeeSaw::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (!RotatingWorld) return;
+	if (!active)
+	{
+		// Check if rotation is close to 0,0,0
+		if (FMath::IsNearlyZero(PlatformMesh->GetRelativeRotation().Pitch, 0.1f) && FMath::IsNearlyZero(PlatformMesh->GetRelativeRotation().Roll, 0.1f))
+		{
+			active = true;
+		}
+		else return;
+	}
 
 	if (HasAuthority())
 	{
-		if (PlatformMesh->GetRelativeRotation().Pitch >= 15 && !IsRotating)
+		
+		
+		if (PlatformMesh->GetRelativeRotation().Pitch - AdditionalRotation.Pitch >= 15 && !IsRotating)
+		{
+			//Log to see relative rotation pitch
+			UE_LOG(LogTemp, Warning, TEXT("Pitch: %f"), PlatformMesh->GetRelativeRotation().Pitch);
+			IsRotating = true;
+			RotatingWorld->RotateWorld(FRotator(90, 0, 0));
+			active = false;
+		}
+		else if (PlatformMesh->GetRelativeRotation().Pitch - AdditionalRotation.Pitch <= -15 && !IsRotating)
 		{
 			IsRotating = true;
-			RotatingWorld->RotateWorld(true, 90);
+			RotatingWorld->RotateWorld(FRotator(-90, 0, 0));
+			
+			active = false;
 		}
-		else if (PlatformMesh->GetRelativeRotation().Pitch <= -15 && !IsRotating)
+		else if (PlatformMesh->GetRelativeRotation().Roll - AdditionalRotation.Roll >= 15 && !IsRotating)
 		{
 			IsRotating = true;
-			RotatingWorld->RotateWorld(true, -90);
+			RotatingWorld->RotateWorld(FRotator(0, 0, 90));
+			
+			active = false;
 		}
-		// else if (PlatformMesh->GetRelativeRotation().Yaw  ==  && !IsRotating)
-		// {
-		// 	
-		// }
-		else if (BaseMesh->GetRelativeRotation().Pitch  == 0 && IsRotating)
+		else if (PlatformMesh->GetRelativeRotation().Roll - AdditionalRotation.Roll <= -15 && !IsRotating)
+		{
+			IsRotating = true;
+			RotatingWorld->RotateWorld(FRotator(0, 0, -90));
+			
+			active = false;
+		}
+		else if (BaseMesh->GetRelativeRotation().Pitch - AdditionalRotation.Pitch  == 0 && IsRotating)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("READY!"));
 			IsRotating = false;
 			// RotatingWorld->RotateWorld(true);
 		}
 	}
-
 }
-

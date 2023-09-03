@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "RotatingWorld.h"
@@ -37,5 +35,6 @@ public:
 
 private:
 	bool IsRotating;
-
+	bool active;
+	FRotator AdditionalRotation; // Store the initial rotation of the SeeSaw
 };

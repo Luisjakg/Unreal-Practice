@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "WeaponPlatform.h"
 
 // Sets default values
@@ -10,7 +7,7 @@ AWeaponPlatform::AWeaponPlatform()
 	SpawnerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	SpawnerMesh->SetupAttachment(RootComponent);
 	
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -34,20 +31,29 @@ void AWeaponPlatform::StartTimer()
 
 void AWeaponPlatform::SpawnWeapon()
 {
-	if(HasAuthority())
-    {
-		 ServerSpawnWeapon();
-    }
+	if (HasAuthority())
+	{
+		ServerSpawnWeapon();
+	}
 }
 
 void AWeaponPlatform::ServerSpawnWeapon_Implementation()
 {
 	int RandWeaponIndex = FMath::RandRange(0, WeaponClasses.Num() - 1);
 	FVector SpawnLocation = GetActorLocation() + GetActorUpVector() * 50;
-	ACollectableActor* SpawnedWeapon = Cast<ACollectableActor>( GetWorld()->SpawnActor(WeaponClasses[RandWeaponIndex], &SpawnLocation));
-	if(SpawnedWeapon)
+	ACollectableActor* SpawnedWeapon = Cast<ACollectableActor>(GetWorld()->SpawnActor(WeaponClasses[RandWeaponIndex], &SpawnLocation));
+
+	if (SpawnedWeapon)
 	{
+		// Attach the spawned weapon to the RootComponent of this actor
+		SpawnedWeapon->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepWorldTransform);
+		
+		// SpawnedWeapon->SetActorRelativeLocation(FVector::ZeroVector);
+		// SpawnedWeapon->SetActorRelativeRotation(FRotator::ZeroRotator);
+
 		SpawnedWeapon->Spawner = this;
 	}
 }
+
+
 

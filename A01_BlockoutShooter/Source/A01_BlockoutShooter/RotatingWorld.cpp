@@ -1,13 +1,5 @@
 #include "RotatingWorld.h"
 
-#include "EngineUtils.h"
-#include "Net/UnrealNetwork.h"
-#include "GameFramework/Character.h" // Include the appropriate character header
-#include "GameFramework/PlayerController.h"
-#include "GameFramework/PlayerState.h"
-#include "GameFramework/GameModeBase.h"
-#include "Kismet/GameplayStatics.h"
-
 // Sets default values
 ARotatingWorld::ARotatingWorld()
 {
@@ -22,14 +14,14 @@ ARotatingWorld::ARotatingWorld()
     // Enable replication for this actor
     bReplicates = true;
 
-    // Set replication for attached UStaticMeshComponents
-    TArray<UStaticMeshComponent*> AttachedStaticMeshComponents;
-    GetComponents<UStaticMeshComponent>(AttachedStaticMeshComponents);
-
-    for (UStaticMeshComponent* AttachedStaticMesh : AttachedStaticMeshComponents)
-    {
-        AttachedStaticMesh->SetIsReplicated(true);
-    }
+    // // Set replication for attached UStaticMeshComponents
+    // TArray<UStaticMeshComponent*> AttachedStaticMeshComponents;
+    // GetComponents<UStaticMeshComponent>(AttachedStaticMeshComponents);
+    //
+    // for (UStaticMeshComponent* AttachedStaticMesh : AttachedStaticMeshComponents)
+    // {
+    //     AttachedStaticMesh->SetIsReplicated(true);
+    // }
 }
 
 // Called when the game starts or when spawned
@@ -60,19 +52,18 @@ void ARotatingWorld::Tick(float DeltaTime)
 
 void ARotatingWorld::LaunchPlayersIntoAir_Implementation()
 {
-    // Iterate through all instances of AIgoraPlayerControllerBase
-    for (AA01_BlockoutShooterCharacter* Controller : TActorRange<AA01_BlockoutShooterCharacter>(GetWorld()))
-    {
-        // Get the controlled character
-        
-            // Calculate the launch direction (upward)
-            FVector LaunchDirection = FVector(0.0f, 0.0f, 1.0f); // Upward direction
-            float LaunchStrength = 1500.0f; // Adjust this value as needed
-
-            // Launch the character into the air
-            Controller->LaunchCharacter(LaunchDirection * LaunchStrength, false, false);
-        
-    }
+    // for (AA01_BlockoutShooterCharacter* Controller : TActorRange<AA01_BlockoutShooterCharacter>(GetWorld()))
+    // {
+    //     // Get the controlled character
+    //     
+    //         // Calculate the launch direction (upward)
+    //         FVector LaunchDirection = FVector(0.0f, 0.0f, 1.0f); // Upward direction
+    //         float LaunchStrength = 1500.0f; // Adjust this value as needed
+    //
+    //         // Launch the character into the air
+    //         Controller->LaunchCharacter(LaunchDirection * LaunchStrength, false, false);
+    //     
+    // }
 }
 
 void ARotatingWorld::OnRep_TargetRotation()
@@ -80,29 +71,41 @@ void ARotatingWorld::OnRep_TargetRotation()
     SetActorRotation(TargetRotation);
 }
 
-void ARotatingWorld::RotateWorld(bool Horizontal, int Amount)
+void ARotatingWorld::RotateWorld(FRotator Rotation)
 {
-        if (HasAuthority())
-        {
-            MulticastRotate(Horizontal, Amount);
-        }
+    if (HasAuthority())
+    {
+        MulticastRotate(Rotation);
+    }
 }
 
-void ARotatingWorld::MulticastRotate_Implementation(bool Horizontal, int Amount)
+void ARotatingWorld::MulticastRotate_Implementation(FRotator Rotation)
 {
-    if (!bIsRotating)
-    {
-        if (Horizontal)
-        {
-            TargetRotation.Yaw += Amount;
-        }
-        else
-        {
-            TargetRotation.Pitch += Amount;
-        }
+    if (bIsRotating) return;
+    LaunchPlayersIntoAir();
+    TargetRotation += Rotation;
+    bIsRotating = true;
+}
+// { OLD CODE
+//     if (!bIsRotating)
+//     {
+//         LaunchPlayersIntoAir();
+//         if (Horizontal)
+//         {
+//             TargetRotation.Yaw += Amount;
+//         }
+//         else
+//         {
+//             TargetRotation.Pitch += Amount;
+//         }
+//
+//         bIsRotating = true;
+//     }
+// }
 
-        bIsRotating = true;
-
-        LaunchPlayersIntoAir();
-    }
+void ARotatingWorld::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    // Add any replicated properties here, for example:
+    // DOREPLIFETIME(ARotatingWorld, TargetRotation);
 }

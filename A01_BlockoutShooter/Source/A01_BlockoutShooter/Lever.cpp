@@ -49,11 +49,6 @@ void ALever::Tick(float DeltaTime)
 				WreckingBall->BallMesh->SetEnableGravity(true);
 			}
 		}
-		else if(Arm->GetRelativeRotation().Pitch <= -45)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Off!"));
-		}
-	
 	}
 
 }

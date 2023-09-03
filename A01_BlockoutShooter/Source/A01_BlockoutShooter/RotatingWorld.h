@@ -2,10 +2,12 @@
 
 #pragma once
 
+#include "EngineUtils.h"
+#include "Net/UnrealNetwork.h"
+#include "A01_BlockoutShooterCharacter.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Net/UnrealNetwork.h" // Include this for replication
-#include "A01_BlockoutShooterCharacter.h"
 #include "RotatingWorld.generated.h"
 
 UCLASS()
@@ -26,7 +28,7 @@ public:
 	UFUNCTION()
 	void OnRep_TargetRotation();
 
-	void RotateWorld(bool Horizontal, int Amount);
+	void RotateWorld(FRotator Rotation);
 
 	UFUNCTION(Server, Reliable)
 	void LaunchPlayersIntoAir();
@@ -35,8 +37,8 @@ public:
 	UPROPERTY(ReplicatedUsing = OnRep_TargetRotation)
 	FRotator TargetRotation;
 
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastRotate(bool Horizontal, int Amount);
+	UFUNCTION(Server, Reliable)
+	void MulticastRotate(FRotator Rotation);
 
 private:
 	float RotationSpeed;
