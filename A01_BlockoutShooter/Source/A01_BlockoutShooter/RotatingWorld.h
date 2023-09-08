@@ -30,11 +30,8 @@ public:
 
 	void RotateWorld(FRotator Rotation);
 
-	UFUNCTION(Server, Reliable)
-	void LaunchPlayersIntoAir();
-
 	// Replicated variables
-	UPROPERTY(ReplicatedUsing = OnRep_TargetRotation)
+	UPROPERTY()
 	FRotator TargetRotation;
 
 	UFUNCTION(NetMulticast, Reliable)
@@ -43,4 +40,6 @@ public:
 private:
 	float RotationSpeed;
 	bool bIsRotating;
+	float MinTime;
+	float Timer;
 };

@@ -12,10 +12,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Effects/NS_Explosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Effects/NS_Explosion.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Effects/NS_Shoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Effects/NS_Shoot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_AssetPlatform.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_AssetPlatform.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/24/CPP5X1HBQ15YUQD47NEP3E.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/24/CPP5X1HBQ15YUQD47NEP3E.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/X4/P64OFMNLR1RW56L7MMWIJG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/X4/P64OFMNLR1RW56L7MMWIJG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RotatingWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RotatingWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RotatingWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RotatingWorld.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -129,6 +133,9 @@
       <workItem from="1693707643901" duration="1561000" />
       <workItem from="1693717548282" duration="25592000" />
       <workItem from="1693768266642" duration="1833000" />
+      <workItem from="1693888958654" duration="3652000" />
+      <workItem from="1694053948907" duration="1277000" />
+      <workItem from="1694178042316" duration="1882000" />
     </task>
     <servers />
   </component>

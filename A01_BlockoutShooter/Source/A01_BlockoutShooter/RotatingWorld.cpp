@@ -14,14 +14,8 @@ ARotatingWorld::ARotatingWorld()
     // Enable replication for this actor
     bReplicates = true;
 
-    // // Set replication for attached UStaticMeshComponents
-    // TArray<UStaticMeshComponent*> AttachedStaticMeshComponents;
-    // GetComponents<UStaticMeshComponent>(AttachedStaticMeshComponents);
-    //
-    // for (UStaticMeshComponent* AttachedStaticMesh : AttachedStaticMeshComponents)
-    // {
-    //     AttachedStaticMesh->SetIsReplicated(true);
-    // }
+    MinTime = 4.5f; // We use a min Timer to force the rotation in case it takes longer than usual
+    Timer = 0;
 }
 
 // Called when the game starts or when spawned
@@ -41,29 +35,22 @@ void ARotatingWorld::Tick(float DeltaTime)
         FRotator CurrentRotation = GetActorRotation();
         FRotator NewRotation = FMath::RInterpTo(CurrentRotation, TargetRotation, DeltaTime, RotationSpeed);
         SetActorRotation(NewRotation);
+        Timer += DeltaTime;
 
+        if (Timer > MinTime)
+        {
+            bIsRotating = false;
+            SetActorRotation(TargetRotation);
+            Timer = 0;
+            return;
+        }
+        
         // Check if we reached the target rotation
-        if (NewRotation.Equals(TargetRotation, 0.1f)) // Adjust the tolerance as needed
+        if (NewRotation.Equals(TargetRotation, 0.1f))
         {
             bIsRotating = false;
         }
     }
-}
-
-void ARotatingWorld::LaunchPlayersIntoAir_Implementation()
-{
-    // for (AA01_BlockoutShooterCharacter* Controller : TActorRange<AA01_BlockoutShooterCharacter>(GetWorld()))
-    // {
-    //     // Get the controlled character
-    //     
-    //         // Calculate the launch direction (upward)
-    //         FVector LaunchDirection = FVector(0.0f, 0.0f, 1.0f); // Upward direction
-    //         float LaunchStrength = 1500.0f; // Adjust this value as needed
-    //
-    //         // Launch the character into the air
-    //         Controller->LaunchCharacter(LaunchDirection * LaunchStrength, false, false);
-    //     
-    // }
 }
 
 void ARotatingWorld::OnRep_TargetRotation()
@@ -75,6 +62,7 @@ void ARotatingWorld::RotateWorld(FRotator Rotation)
 {
     if (HasAuthority())
     {
+        if (bIsRotating) return;
         MulticastRotate(Rotation);
     }
 }
@@ -82,10 +70,14 @@ void ARotatingWorld::RotateWorld(FRotator Rotation)
 void ARotatingWorld::MulticastRotate_Implementation(FRotator Rotation)
 {
     if (bIsRotating) return;
-    LaunchPlayersIntoAir();
+
+    // Ensure the new rotation doesn't exceed 360 degrees
     TargetRotation += Rotation;
+    TargetRotation.Normalize();
+
     bIsRotating = true;
 }
+
 // { OLD CODE
 //     if (!bIsRotating)
 //     {
@@ -103,9 +95,9 @@ void ARotatingWorld::MulticastRotate_Implementation(FRotator Rotation)
 //     }
 // }
 
-void ARotatingWorld::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
-{
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    // Add any replicated properties here, for example:
-    // DOREPLIFETIME(ARotatingWorld, TargetRotation);
-}
+// void ARotatingWorld::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+// {
+//     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+//     // Add any replicated properties here, for example:
+//     // DOREPLIFETIME(ARotatingWorld, TargetRotation);
+// }
