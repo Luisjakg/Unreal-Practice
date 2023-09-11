@@ -78,10 +78,16 @@ void AA01_BlockoutShooterCharacter::BeginPlay()
 	}
 
 	GameState = Cast<AShooterGameState>(GetWorld()->GetGameState());
+	DefaultMaterialInstanceOne = GetMesh()->GetMaterial(0);
+	DefaultMaterialInstanceTwo = GetMesh()->GetMaterial(1);
 }
 
 void AA01_BlockoutShooterCharacter::DealDamage(int Damage)
 {
+	if (bIsPlayerInvulnerable)
+	{
+		return;
+	}
 	CurrentHealth-=Damage;
 	UE_LOG(LogTemp, Warning, TEXT("Hit %s New Health: %f"), *GetName(), CurrentHealth);
 	if(CurrentHealth<= 0)
@@ -127,6 +133,48 @@ void AA01_BlockoutShooterCharacter::ReceiveParticleData_Implementation(const TAr
 	{
 		ServerSpawnExplosion(Data);
 	}
+}
+
+void AA01_BlockoutShooterCharacter::StartInvulnerabilityTimer()
+{
+	GetWorld()->GetTimerManager().SetTimer(InvulnerabilityTimer, this, &AA01_BlockoutShooterCharacter::DisableVulnerability, 5);
+}
+
+void AA01_BlockoutShooterCharacter::DisableVulnerability()
+{
+	if(HasAuthority())
+    {
+		 ServerDisableInvulnerability();
+    }
+
+}
+
+void AA01_BlockoutShooterCharacter::UpdateMaterials_Implementation(UMaterialInterface* NewMaterial)
+{
+	USkeletalMeshComponent* CharacterMesh = GetMesh();
+	if(NewMaterial)
+	{
+		APlayerState* MyPlayerState = GetPlayerState();
+		const FLinearColor Color = GameState->GetTeamColour(MyPlayerState);
+		UMaterialInstanceDynamic* TeamInstance = UMaterialInstanceDynamic::Create(NewMaterial, this);
+		TeamInstance->SetVectorParameterValue(TEXT("Hologram Colour"), Color);
+
+		CharacterMesh->SetMaterial(0, TeamInstance);
+        CharacterMesh->SetMaterial(1, TeamInstance);
+		
+        bIsPlayerInvulnerable = true;
+	}
+	else
+	{
+		CharacterMesh->SetMaterial(0, DefaultMaterialInstanceOne);
+		CharacterMesh->SetMaterial(1, DefaultMaterialInstanceTwo);
+		bIsPlayerInvulnerable = false;
+	}
+}
+
+void AA01_BlockoutShooterCharacter::ServerDisableInvulnerability_Implementation()
+{
+	UpdateMaterials(nullptr);
 }
 
 void AA01_BlockoutShooterCharacter::ServerSpawnExplosion_Implementation(const TArray<FBasicParticleData>& Data)

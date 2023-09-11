@@ -106,7 +106,24 @@ public:
 	
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<ABlasterExplosion> BlasterExplosionClass;
+	
 	UFUNCTION(Server, Reliable)
 	void ServerSpawnExplosion(const TArray<FBasicParticleData>& Data);
+
+	FTimerHandle InvulnerabilityTimer;
+    UMaterialInterface* DefaultMaterialInstanceOne;
+    UMaterialInterface* DefaultMaterialInstanceTwo;
+    bool bIsPlayerInvulnerable = false;
+
+	UFUNCTION()
+	void StartInvulnerabilityTimer();
+	void DisableVulnerability();	
+	
+	UFUNCTION(Server, Reliable)
+	void ServerDisableInvulnerability();
+
+	UFUNCTION(NetMulticast, Reliable)
+	void UpdateMaterials(UMaterialInterface* NewMaterial);
+
 };
 
