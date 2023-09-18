@@ -34,7 +34,7 @@ public:
 	ARotatingWorld* RotatingWorld;
 
 private:
-	bool IsRotating;
-	bool active;
+	bool bIsRotating;
+	bool bActive;
 	FRotator AdditionalRotation; // Store the initial rotation of the SeeSaw
 };

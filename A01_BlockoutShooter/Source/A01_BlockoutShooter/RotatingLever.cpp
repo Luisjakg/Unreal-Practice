@@ -23,7 +23,7 @@ ARotatingLever::ARotatingLever()
 	PlatformMesh->SetIsReplicated(true);
 	PhysicsConstraint->SetIsReplicated(true);
 
-	IsRotating = false;
+	bIsRotating = false;
 }
 
 // Called when the game starts or when spawned
@@ -42,24 +42,24 @@ void ARotatingLever::Tick(float DeltaTime)
 	UE_LOG( LogTemp, Warning, TEXT("Roll: %f"), PlatformMesh->GetRelativeRotation().Yaw);
 	if (HasAuthority())
 	{
-		if (PlatformMesh->GetRelativeRotation().Yaw >= 15 && !IsRotating)
+		if (PlatformMesh->GetRelativeRotation().Yaw >= 15 && !bIsRotating)
 		{
-			IsRotating = true;
+			bIsRotating = true;
 			RotatingWorld->RotateWorld(FRotator(0, 90, 0));
 		}
-		else if (PlatformMesh->GetRelativeRotation().Yaw <= -15 && !IsRotating)
+		else if (PlatformMesh->GetRelativeRotation().Yaw <= -15 && !bIsRotating)
 		{
-			IsRotating = true;
+			bIsRotating = true;
 			RotatingWorld->RotateWorld(FRotator(0, -90, 0));
 		}
-		// else if (PlatformMesh->GetRelativeRotation().Yaw  ==  && !IsRotating)
+		// else if (PlatformMesh->GetRelativeRotation().Yaw  ==  && !bIsRotating)
 		// {
 		// 	
 		// }
-		else if (BaseMesh->GetRelativeRotation().Roll  == 0 && IsRotating)
+		else if (BaseMesh->GetRelativeRotation().Roll  == 0 && bIsRotating)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("READY!"));
-			IsRotating = false;
+			bIsRotating = false;
 			// RotatingWorld->RotateWorld(true);
 		}
 	}

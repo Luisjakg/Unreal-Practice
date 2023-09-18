@@ -38,5 +38,5 @@ public:
 	ARotatingWorld* RotatingWorld;
 
 private:
-	bool IsRotating;
+	bool bIsRotating;
 };
