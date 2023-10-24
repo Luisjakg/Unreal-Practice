@@ -10,10 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/InvulnerabilityPotion.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/InvulnerabilityPotion.h" afterDir="false" />
-    </list>
+    <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,6 +136,7 @@
       <workItem from="1695089370978" duration="736000" />
       <workItem from="1695095727002" duration="3153000" />
       <workItem from="1696301931976" duration="25000" />
+      <workItem from="1696750511086" duration="68000" />
     </task>
     <servers />
   </component>
