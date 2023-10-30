@@ -80,10 +80,12 @@ void URocketLauncherComponent::MulticastShootParticle_Implementation(FVector Loc
 	if (NS_ShootParticle)
 	{
 		FLinearColor ParticleColor =  GameState->GetTeamColour(Character->GetPlayerState());
+		float ParticleSpeed = Character-> GetVelocity().Size() / 1000;
 		UNiagaraComponent* ParticleComponent = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NS_ShootParticle, Location, Rotation);
 		if (ParticleComponent)
 		{
 			ParticleComponent->SetNiagaraVariableLinearColor("Color", ParticleColor);
+			ParticleComponent->SetNiagaraVariableFloat("Speed", ParticleSpeed);
 		}
 
 	}

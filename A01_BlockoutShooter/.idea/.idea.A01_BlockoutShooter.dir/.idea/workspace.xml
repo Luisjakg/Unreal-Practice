@@ -10,7 +10,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="" />
+    <list default="true" id="e2c9f0b3-45c4-4e63-9e23-cc91ab1761ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A01_BlockoutShooter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Effects/NS_Shoot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Effects/NS_Shoot.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/BK/VO5JDCHWRBUFZ8EKRGP3OQ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/BK/VO5JDCHWRBUFZ8EKRGP3OQ.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/F4/I4IVPAYTSSMKKEL5DVBALJ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/F4/I4IVPAYTSSMKKEL5DVBALJ.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/14/OBOZJ1POSYBT67Z5VKU356.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/EmptyActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/EmptyActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/FlyingBridge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/InvulnerabilityPotion.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/InvulnerabilityPotion.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/ProjectileRocket.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/RocketLauncherComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/SpawnLocation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/SpawnLocation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WeaponPlatform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WeaponPlatform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WreckingBall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/A01_BlockoutShooter/WreckingBall.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,6 +151,10 @@
       <workItem from="1695095727002" duration="3153000" />
       <workItem from="1696301931976" duration="25000" />
       <workItem from="1696750511086" duration="68000" />
+      <workItem from="1698226087279" duration="1849000" />
+      <workItem from="1698474011487" duration="1292000" />
+      <workItem from="1698546167681" duration="792000" />
+      <workItem from="1698648683926" duration="3310000" />
     </task>
     <servers />
   </component>
